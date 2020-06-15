@@ -1,10 +1,10 @@
 import React from 'react'
-import Footer from '../components/footer'
-import Header from "../components/header"
+import Footer from './footer'
+import Header from "./header"
 
 import '../styles/index.scss'
 
-const Layout = (props) => {
+const Layout = (props: { children: React.ReactNode }) => {
     return (
         <div>
             <Header />

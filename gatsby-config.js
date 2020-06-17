@@ -6,6 +6,8 @@
 
 module.exports = {
   siteMetadata: {
+    title: "Sarah's Site",
+    author: "Sarah Smith",
     name: "Basic Gatsby Typescript Blog",
     tagline: "Gatsby + SASS + Typescript",
   },

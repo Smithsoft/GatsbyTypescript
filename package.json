@@ -6,10 +6,11 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -p 8001",
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
+    "kate": "cal",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },

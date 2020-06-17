@@ -1,16 +1,25 @@
 import React from "react"
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 import headerStyles from "./header.module.scss"
 
 const Header = (): React.ReactElement => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
   return (
     <header>
       <h1>
         <Link className={headerStyles.title} to="/">
-          Sarah's Site
+          {data.site.siteMetadata.title}
         </Link>
       </h1>
       <nav>

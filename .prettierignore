@@ -4,3 +4,4 @@ package.json
 package-lock.json
 public
 webpack.config.js
+*.d.ts

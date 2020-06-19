@@ -1,13 +1,43 @@
-import React from "react"
-import Layout from "../components/layout"
+import React from 'react';
 
-const BlogPages = () => {
-  return (
-    <Layout>
-      <h1>Blog</h1>
-      <p>Posts will show up here.</p>
-    </Layout>
-  )
-}
+import { graphql, useStaticQuery } from 'gatsby';
 
-export default BlogPages
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import Layout from '../components/layout';
+
+import MarkdownPosts from '../components/MarkdownPosts';
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import BlogListing from '../components/bloglisting';
+
+const BlogPages = (): React.ReactElement => {
+    const data: MarkdownPosts = useStaticQuery(graphql`
+        query {
+            allMarkdownRemark {
+                edges {
+                    node {
+                        frontmatter {
+                            title
+                            date
+                        }
+                        html
+                        excerpt
+                    }
+                }
+            }
+        }
+    `);
+    console.log(data);
+    return (
+        <Layout>
+            <h1>Blog</h1>
+            <ol>
+                {data.allMarkdownRemark.edges.map(edge => {
+                    return <BlogListing>{edge}</BlogListing>;
+                })}
+            </ol>
+        </Layout>
+    );
+};
+
+export default BlogPages;

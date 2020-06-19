@@ -9,6 +9,6 @@
     "moduleResolution": "node",
     "removeComments": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "gatsby-node.js"],
   "exclude": ["webpack.config.js"]
 }

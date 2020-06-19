@@ -6,15 +6,15 @@ import "../styles/index.scss"
 import layoutStyles from "./layout.module.scss"
 
 const Layout = (props: { children: React.ReactNode }): React.ReactElement => {
-  return (
-    <div className={layoutStyles.container}>
-      <div className={layoutStyles.content}>
-        <Header />
-        {props.children}
-      </div>
-      <Footer />
-    </div>
-  )
+    return (
+        <div className={layoutStyles.container}>
+            <div className={layoutStyles.content}>
+                <Header />
+                {props.children}
+            </div>
+            <Footer />
+        </div>
+    )
 }
 
-export default Layout
+export default Layout;

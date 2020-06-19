@@ -22,6 +22,9 @@ const BlogPages = (): React.ReactElement => {
                         }
                         html
                         excerpt
+                        fields {
+                            slug
+                        }
                     }
                 }
             }
@@ -33,7 +36,7 @@ const BlogPages = (): React.ReactElement => {
             <h1>Blog</h1>
             <ol>
                 {data.allMarkdownRemark.edges.map(edge => {
-                    return <BlogListing>{edge}</BlogListing>;
+                    return <BlogListing>{edge.node}</BlogListing>;
                 })}
             </ol>
         </Layout>

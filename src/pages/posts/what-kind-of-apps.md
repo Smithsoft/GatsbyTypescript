@@ -5,6 +5,8 @@ date: "12-06-2020"
 
 When I’m using an app on my phone I don’t care what kind of app it is as long as I can do what I need. But if I want to have a mobile app built, suddenly there seems to be so many different choices to make.
 
+![Mobile app feed SVG by undraw.co](./undraw_mobile_feed_73bd.svg)
+
 ## How do I know what kind of app I want?
 
 This video builds on my previous one “How apps work”. If you haven’t watched that yet I suggest you go back and take a look.

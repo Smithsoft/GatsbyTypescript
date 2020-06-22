@@ -5,6 +5,8 @@ date: "04-06-2020"
 
 Many of us use apps every day. But we don’t often stop to think: how do apps even work?
 
+![Mobile inbox image SVG by undraw.co](./undraw_mobile_inbox_3h46.svg)
+
 In this video I’ll be digging into how apps work to connect people with things they value, and how that works for your business. I’ll talk about app development, the cloud, the app stores, and some other technical stuff – but we are going to be keeping it light on the jargon.
 
 It’s the first video in my series “How do I build an app?”

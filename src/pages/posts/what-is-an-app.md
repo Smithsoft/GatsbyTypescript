@@ -5,6 +5,8 @@ date: "03-06-2020"
 
 Have you ever wondered what goes into building an app?
 
+![Mobile app wireframe SVG image by undraw.co](./undraw_app_wireframe_9ssu.svg)
+
 What different kinds of apps are there?
 
 ## How can I get an app built?

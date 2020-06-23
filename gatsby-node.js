@@ -7,7 +7,10 @@ const path = require('path');
 module.exports.onCreateNode = ({ node, actions }) => {
     const { createNode, createNodeField } = actions;
 
-    if (node.internal.type === 'MarkdownRemark') {
+    if (
+        node.internal.type === 'MarkdownRemark' &&
+        node.fileAbsolutePath !== undefined
+    ) {
         const slug = path.basename(node.fileAbsolutePath, '.md');
         createNodeField({ node, name: 'slug', value: slug });
     }
@@ -20,7 +23,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
     const result = await graphql(`
         query {
-            allMarkdownRemark {
+            allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/.+/" } }) {
                 edges {
                     node {
                         fields {
@@ -32,12 +35,14 @@ module.exports.createPages = async ({ graphql, actions }) => {
         }
     `);
     result.data.allMarkdownRemark.edges.forEach(edge => {
-        createPage({
-            component: blogTemplate,
-            path: `/blog/${edge.node.fields.slug}`,
-            context: {
-                slug: edge.node.fields.slug,
-            },
-        });
+        if (edge.node.fields !== null) {
+            createPage({
+                component: blogTemplate,
+                path: `/blog/${edge.node.fields.slug}`,
+                context: {
+                    slug: edge.node.fields.slug,
+                },
+            });
+        }
     });
 };

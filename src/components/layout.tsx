@@ -1,9 +1,11 @@
-import React from "react"
-import Footer from "./footer"
-import Header from "./header"
+import React from 'react';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import Footer from './footer';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import Header from './header';
 
-import "../styles/index.scss"
-import layoutStyles from "./layout.module.scss"
+import '../styles/index.scss';
+import layoutStyles from './layout.module.scss';
 
 const Layout = (props: { children: React.ReactNode }): React.ReactElement => {
     return (
@@ -14,7 +16,7 @@ const Layout = (props: { children: React.ReactNode }): React.ReactElement => {
             </div>
             <Footer />
         </div>
-    )
-}
+    );
+};
 
 export default Layout;

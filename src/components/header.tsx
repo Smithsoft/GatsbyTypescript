@@ -55,6 +55,15 @@ const Header = (): React.ReactElement => {
                         <Link
                             className={headerStyles.navItem}
                             activeClassName={headerStyles.activeNavItem}
+                            to="/cmsblog"
+                        >
+                            Content
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            className={headerStyles.navItem}
+                            activeClassName={headerStyles.activeNavItem}
                             to="/contact"
                         >
                             Contact

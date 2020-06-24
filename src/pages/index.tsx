@@ -6,11 +6,12 @@ import { Link } from 'gatsby';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Layout from '../components/layout';
 
+import Head from '../components/head';
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import SVG from 'react-inlinesvg';
 
 import indexStyle from './index.module.scss';
-
 import WomanWithPhoneImage from '../assets/undraw_my_code_snippets_lynx.svg';
 
 const PreProcess = (code: string): string => {
@@ -22,6 +23,7 @@ class IndexPage extends React.Component {
     render(): React.ReactElement {
         return (
             <Layout>
+                <Head title="Home" />
                 <h1>Hello.</h1>
                 <h2>I'm Sarah. I'm a developer living in sunny Brisbane.</h2>
                 <div className={indexStyle.svgContainer}>

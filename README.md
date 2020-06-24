@@ -47,9 +47,10 @@ npx tsm src --watch
 
 ## Use SVG images
 
-* [Better than PNG](https://itnext.io/react-svg-images-and-the-webpack-loader-to-make-them-play-nice-2d177ae34d2b)
-* [Includes one from Undraw](https://undraw.co)
+Huge shout out to the great [Katerina Limpi](https://twitter.com/ninaLimpi) for her awesome collection of SVG images!
 
+- [Better than PNG](https://itnext.io/react-svg-images-and-the-webpack-loader-to-make-them-play-nice-2d177ae34d2b)
+- [Includes ones from Undraw](https://undraw.co)
 
 ## Deploy
 

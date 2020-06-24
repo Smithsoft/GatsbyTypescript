@@ -11,22 +11,19 @@ import MarkdownPosts from '../components/MarkdownPosts';
 import BlogListing from '../components/bloglisting';
 
 import blogStyles from './blog.module.scss';
+import CMSPosts from '../components/CMSPosts';
 
-const BlogPages = (): React.ReactElement => {
-    const data: MarkdownPosts = useStaticQuery(graphql`
+const CMSBlogPages: React.FC = (): JSX.Element => {
+    const data: CMSPosts = useStaticQuery(graphql`
         query {
-            allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/.+/" } }) {
+            allContentfulBlogPost(
+                sort: { fields: publishedDate, order: DESC }
+            ) {
                 edges {
                     node {
-                        frontmatter {
-                            title
-                            date
-                        }
-                        html
-                        excerpt
-                        fields {
-                            slug
-                        }
+                        title
+                        slug
+                        publishedDate(formatString: "MMMM Do, YYYY")
                     }
                 }
             }
@@ -34,9 +31,9 @@ const BlogPages = (): React.ReactElement => {
     `);
     return (
         <Layout>
-            <h1>Blog</h1>
+            <h1>Blog from Contentful</h1>
             <ol className={blogStyles.posts}>
-                {data.allMarkdownRemark.edges.map(edge => {
+                {data.allContentfulBlogPost.edges.map(edge => {
                     return <BlogListing>{edge.node}</BlogListing>;
                 })}
             </ol>
@@ -44,4 +41,4 @@ const BlogPages = (): React.ReactElement => {
     );
 };
 
-export default BlogPages;
+export default CMSBlogPages;

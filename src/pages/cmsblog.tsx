@@ -13,7 +13,7 @@ import BlogListing from '../components/bloglisting';
 import blogStyles from './blog.module.scss';
 import CMSPosts from '../components/CMSPosts';
 
-const CMSBlogPages = () => {
+const CMSBlogPages: React.FC = (): JSX.Element => {
     const data: CMSPosts = useStaticQuery(graphql`
         query {
             allContentfulBlogPost(

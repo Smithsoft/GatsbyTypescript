@@ -31,12 +31,23 @@ class CMSBlogPost extends React.Component<{
     };
 }> {
     render(): ReactNode {
+        const options = {
+            renderNode: {
+                'embedded-asset-block': (node): JSX.Element => {
+                    const alt = node.data.target.fields.title['en-US'];
+                    const url = node.data.target.fields.file['en-US'].url;
+                    return <img alt={alt} src={url} />
+                }
+            }
+        };
+    
         return (
             <Layout>
                 <h1>{this.props.data.contentfulBlogPost.title}</h1>
                 <p>{this.props.data.contentfulBlogPost.publishedDate}</p>
                 {documentToReactComponents(
-                    this.props.data.contentfulBlogPost.body.json
+                    this.props.data.contentfulBlogPost.body.json,
+                    options
                 )}
             </Layout>
         );

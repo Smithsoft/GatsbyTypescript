@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
+    "@contentful/rich-text-types": "^14.1.1",
     "@types/react-helmet": "^6.0.0",
     "gatsby": "^2.23.4",
     "gatsby-plugin-react-helmet": "^3.3.5",

@@ -25,6 +25,9 @@ const CMSBlogPages: React.FC = (): JSX.Element => {
                         title
                         slug
                         publishedDate(formatString: "MMMM Do, YYYY")
+                        body {
+                            json
+                        }
                     }
                 }
             }

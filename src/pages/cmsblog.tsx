@@ -12,6 +12,7 @@ import BlogListing from '../components/bloglisting';
 
 import blogStyles from './blog.module.scss';
 import CMSPosts from '../components/CMSPosts';
+import Head from '../components/head';
 
 const CMSBlogPages: React.FC = (): JSX.Element => {
     const data: CMSPosts = useStaticQuery(graphql`
@@ -24,6 +25,9 @@ const CMSBlogPages: React.FC = (): JSX.Element => {
                         title
                         slug
                         publishedDate(formatString: "MMMM Do, YYYY")
+                        body {
+                            json
+                        }
                     }
                 }
             }
@@ -31,6 +35,7 @@ const CMSBlogPages: React.FC = (): JSX.Element => {
     `);
     return (
         <Layout>
+            <Head title="Content" />
             <h1>Blog from Contentful</h1>
             <ol className={blogStyles.posts}>
                 {data.allContentfulBlogPost.edges.map(edge => {

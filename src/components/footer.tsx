@@ -15,7 +15,13 @@ const Footer = (): React.ReactElement => {
     `);
     return (
         <footer className={footerStyles.footer}>
-            <p>Created by {data.site.siteMetadata.author} ©2020 </p>
+            <p>
+                Created by {data.site.siteMetadata.author} ©2020 |{' '}
+                <a href="https://github.com/Smithsoft/GatsbyTypescript">
+                    Code is on GitHub
+                </a>
+                .
+            </p>
         </footer>
     );
 };

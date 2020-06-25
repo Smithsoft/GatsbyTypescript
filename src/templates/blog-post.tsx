@@ -8,6 +8,7 @@ import Layout from '../components/layout';
 
 import MarkdownNode from '../components/MarkdownNode';
 import MarkdownData from '../components/MarkdownData';
+import Head from '../components/head';
 
 /**
  * When processing these templates, gatsby-node will import this query, run
@@ -31,6 +32,7 @@ class BlogPost extends React.Component<MarkdownData> {
         const node: MarkdownNode = this.props.data.markdownRemark;
         return (
             <Layout>
+                <Head title={node.frontmatter.title} />
                 <h1>{node.frontmatter.title}</h1>
                 <p>{node.frontmatter.date}</p>
                 <div>{parse(node.html)}</div>

@@ -15,7 +15,30 @@
 git clone git@github.com:Smithsoft/GatsbyTypescript.git
 cd GatsbyTypescript
 npm install
+touch .env.development
 ```
+
+- [Create Contentful data](https://www.contentful.com/help/contentful-101/), and add entries to `.env.development`:
+
+* Title
+    * _Text_
+* Slug
+    * _Text_
+* Published date
+    * _Date/Time_
+* Body
+    * _Rich text_
+
+Then add your space id and access token to the `.env.development` file:
+
+```
+GATSBY_GRAPHQL_IDE=playground
+CONTENTFUL_SPACE_ID=xabadbeefxa
+CONTENTFUL_ACCESS_TOKEN=rOU1bpbWBADBEEF00BADBEEF00BADBEEF00BADBEEFoacgBU
+CONTENTFUL_ACCESS_TOKEN_PREVIEW=tKt2R3LvKkI5-eNnxDSEF00BADBEEF00BADBBritjbezE
+```
+
+Note that if you run the project without this it will error out on attempting to contact the contentful service.
 
 ## Run
 
@@ -72,3 +95,29 @@ Huge shout out to the great [Katerina Limpi](https://twitter.com/ninaLimpi) for 
   - `npm install`
   - `npm outdated`
   - `npm update`
+
+## Known Issues
+
+* [Why is this not a starter?](https://github.com/Smithsoft/GatsbyTypescript/issues/6)
+
+There's already lots of starters for Gatsby, and this project was just meant as a learning project that could be cloned or forked & used as is.
+If for some reason there's a lot of interest, vote that issue up.
+
+* [Node packaging errors](https://github.com/Smithsoft/GatsbyTypescript/issues/5)
+
+At present the following node packaging errors are manifesting on `npm audit fix`:
+
+```bash
+npm WARN @pmmmwh/react-refresh-webpack-plugin@0.3.3 requires a peer of react-refresh@^0.8.2 but none is installed. You must install peer dependencies yourself.
+npm WARN acorn-dynamic-import@4.0.0 requires a peer of acorn@^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN gatsby-plugin-eslint@2.0.8 requires a peer of eslint-loader@^3.0.2 but none is installed. You must install peer dependencies yourself.
+npm WARN gatsby-plugin-tslint@0.0.2 requires a peer of tslint@^5.11.0 but none is installed. You must install peer dependencies yourself.
+
+up to date in 13.391s
+
+168 packages are looking for funding
+  run `npm fund` for details
+
+fixed 0 of 5 vulnerabilities in 3027 scanned packages
+  5 vulnerabilities required manual review and could not be updated
+  ```

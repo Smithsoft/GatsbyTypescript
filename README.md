@@ -1,5 +1,9 @@
 # Gatsby and Typescript
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e40519a8-cd28-4cd6-a873-18dc0dc17260/deploy-status)](https://app.netlify.com/sites/compassionate-goldwasser-5d9ccd/deploys)
+
+[Rendered Site on Netlify](https://compassionate-goldwasser-5d9ccd.netlify.app)
+
 - Gatsby
 - [Typescript](https://www.typescriptlang.org/)
 - Sass - Node SCSS

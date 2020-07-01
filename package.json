@@ -12,7 +12,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "scss": "npx tsm src --watch"
+    "scss": "npx tsm src --watch",
+    "svgo": "npx svgo --folder src --recursive"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",

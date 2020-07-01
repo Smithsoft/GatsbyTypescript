@@ -3,14 +3,27 @@ import React, { ReactNode } from 'react';
 
 import Layout from '../components/layout';
 import Head from '../components/head';
+import { graphql } from 'gatsby';
 
-/** 
+/**
  * 1) Write a GraphQL dynamic query to fetch the post
  *
  * export const query = graphql`....`;
- * 
+ *
  * - Create a type interface for the content
  * */
+export const query = graphql`
+    query($slug: String) {
+        contentfulBlogPost(slug: { eq: $slug }) {
+            slug
+            title
+            publishedDate(formatString: "MMMM Do YYYY")
+            body {
+                json
+            }
+        }
+    }
+`;
 
 /** 
  * 2) Create a React component to render the post

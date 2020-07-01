@@ -1,8 +1,8 @@
 # Gatsby and Typescript
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e40519a8-cd28-4cd6-a873-18dc0dc17260/deploy-status)](https://app.netlify.com/sites/compassionate-goldwasser-5d9ccd/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/13309e84-4342-457e-8864-68b0c568b481/deploy-status)](https://app.netlify.com/sites/sharp-morse-1ba858/deploys)
 
-[Rendered Site on Netlify](https://compassionate-goldwasser-5d9ccd.netlify.app)
+[Rendered Site on Netlify](https://sharp-morse-1ba858.netlify.app/)
 
 - Gatsby
 - [Typescript](https://www.typescriptlang.org/)

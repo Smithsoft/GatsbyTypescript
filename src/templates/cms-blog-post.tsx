@@ -6,6 +6,7 @@ import Head from '../components/head';
 import { graphql } from 'gatsby';
 import CMSContent from '../components/CMSContent';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Node } from '@contentful/rich-text-types';
 
 /**
  * 1) Write a GraphQL dynamic query to fetch the post
@@ -50,12 +51,21 @@ class CMSBlogPost extends React.Component<CMSContent> {
         const title = this.props.data.contentfulBlogPost.title;
         const dateOfPublish = this.props.data.contentfulBlogPost.publishedDate;
         const content = this.props.data.contentfulBlogPost.body.json;
+        const options = {
+            renderNode: {
+                'embedded-asset-block': (node: Node): ReactNode => {
+                    const alt = node.data.target.fields.title['en-US'];
+                    const url = node.data.target.fields.file['en-US'].url;
+                    return <img alt={alt} src={url} />;
+                },
+            },
+        };
         return (
             <Layout>
                 <Head title={title} />
                 <h1>{title}</h1>
                 <p>{dateOfPublish}</p>
-                {documentToReactComponents(content)}
+                {documentToReactComponents(content, options)}
             </Layout>
         );
     }

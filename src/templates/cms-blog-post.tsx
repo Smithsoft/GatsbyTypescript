@@ -4,6 +4,7 @@ import React, { ReactNode } from 'react';
 import Layout from '../components/layout';
 import Head from '../components/head';
 import { graphql } from 'gatsby';
+import CMSContent from '../components/CMSContent';
 
 /**
  * 1) Write a GraphQL dynamic query to fetch the post
@@ -42,15 +43,18 @@ export const query = graphql`
         };
 */
 
-const CMSBlogPost = () => {
-    return (
-        <Layout>
-            <Head title="Contentful Blog Post" />
-            <h1>Contentful Blog Post</h1>
-            <p>Date: Just now</p>
-            <p>Content here.</p>
-        </Layout>
-    );
-};
+class CMSBlogPost extends React.Component<CMSContent> {
+    render(): ReactNode {
+        console.log(this.props);
+        return (
+            <Layout>
+                <Head title="Contentful Blog Post" />
+                <h1>Contentful Blog Post</h1>
+                <p>Date: Just now</p>
+                <p>Content here.</p>
+            </Layout>
+        );
+    }
+}
 
 export default CMSBlogPost;

@@ -46,11 +46,13 @@ export const query = graphql`
 class CMSBlogPost extends React.Component<CMSContent> {
     render(): ReactNode {
         console.log(this.props);
+        const title = this.props.data.contentfulBlogPost.title;
+        const dateOfPublish = this.props.data.contentfulBlogPost.publishedDate;
         return (
             <Layout>
-                <Head title="Contentful Blog Post" />
-                <h1>Contentful Blog Post</h1>
-                <p>Date: Just now</p>
+                <Head title={title} />
+                <h1>{title}</h1>
+                <p>{dateOfPublish}</p>
                 <p>Content here.</p>
             </Layout>
         );

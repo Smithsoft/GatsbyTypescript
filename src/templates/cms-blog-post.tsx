@@ -1,48 +1,43 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { ReactNode } from 'react';
-import { graphql } from 'gatsby';
-import { Node } from '@contentful/rich-text-types';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Layout from '../components/layout';
 import Head from '../components/head';
-import CMSContent from '../components/CMSContent';
 
-export const query = graphql`
-    query($slug: String) {
-        contentfulBlogPost(slug: { eq: $slug }) {
-            title
-            slug
-            publishedDate(formatString: "MMMM Do, YYYY")
-            body {
-                json
-            }
-        }
-    }
-`;
+/** 
+ * 1) Write a GraphQL dynamic query to fetch the post
+ *
+ * export const query = graphql`....`;
+ * 
+ * - Create a type interface for the content
+ * */
 
-class CMSBlogPost extends React.Component<CMSContent> {
-    render(): ReactNode {
-        const options = {
+/** 
+ * 2) Create a React component to render the post
+ * 
+ * - Make the component typed on the content
+ * - Include the title in the head, and h1 
+ * - Include the published date
+ * - Call documentToReactComponents to render the content
+ * - Render the images by passing in a renderNode handler:
+ *      const options = {
             renderNode: {
-                'embedded-asset-block': (node: Node): JSX.Element => {
-                    const alt = node.data.target.fields.title['en-US'];
-                    const url = node.data.target.fields.file['en-US'].url;
+                'embedded-asset-block': () => {
                     return <img alt={alt} src={url} />;
                 },
             },
         };
-        return (
-            <Layout>
-                <Head title={this.props.data.contentfulBlogPost.title} />
-                <h1>{this.props.data.contentfulBlogPost.title}</h1>
-                <p>{this.props.data.contentfulBlogPost.publishedDate}</p>
-                {documentToReactComponents(
-                    this.props.data.contentfulBlogPost.body.json,
-                    options
-                )}
-            </Layout>
-        );
-    }
-}
+*/
+
+const CMSBlogPost = () => {
+    return (
+        <Layout>
+            <Head title="Contentful Blog Post" />
+            <h1>Contentful Blog Post</h1>
+            <p>Date: Just now</p>
+            <p>Content here.</p>
+        </Layout>
+    );
+};
 
 export default CMSBlogPost;

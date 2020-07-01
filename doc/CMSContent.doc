@@ -1,4 +1,4 @@
-import CMSNode from './CMSNode';
+import CMSNode from '../src/components/CMSNode';
 
 export default interface CMSContent {
     data: {

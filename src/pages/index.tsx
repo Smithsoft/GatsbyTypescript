@@ -1,16 +1,8 @@
 import React from 'react';
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Link } from 'gatsby';
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Layout from '../components/layout';
-
 import Head from '../components/head';
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import SVG from 'react-inlinesvg';
-
 import indexStyle from './index.module.scss';
 import WomanWithPhoneImage from '../assets/undraw_my_code_snippets_lynx.svg';
 

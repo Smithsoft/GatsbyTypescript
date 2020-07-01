@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 import Head from '../components/head';
 import { graphql } from 'gatsby';
 import CMSContent from '../components/CMSContent';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 /**
  * 1) Write a GraphQL dynamic query to fetch the post
@@ -48,12 +49,13 @@ class CMSBlogPost extends React.Component<CMSContent> {
         console.log(this.props);
         const title = this.props.data.contentfulBlogPost.title;
         const dateOfPublish = this.props.data.contentfulBlogPost.publishedDate;
+        const content = this.props.data.contentfulBlogPost.body.json;
         return (
             <Layout>
                 <Head title={title} />
                 <h1>{title}</h1>
                 <p>{dateOfPublish}</p>
-                <p>Content here.</p>
+                {documentToReactComponents(content)}
             </Layout>
         );
     }

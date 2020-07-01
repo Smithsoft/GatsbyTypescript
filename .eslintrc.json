@@ -13,7 +13,8 @@
         "ecmaVersion": 10
     },
     "rules": {
-        "no-unused-vars": "off"
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars-experimental": "error"
     },
     "overrides": [
         {

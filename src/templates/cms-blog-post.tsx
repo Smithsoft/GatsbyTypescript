@@ -1,10 +1,8 @@
 import React, { ReactNode } from 'react';
 import { graphql } from 'gatsby';
-
+import { Node } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { Node } from '@contentful/rich-text-types'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Layout from '../components/layout';
 import Head from '../components/head';
 import CMSContent from '../components/CMSContent';
@@ -21,8 +19,6 @@ export const query = graphql`
         }
     }
 `;
-
-type ContentfulBody = any;
 
 class CMSBlogPost extends React.Component<CMSContent> {
     render(): ReactNode {

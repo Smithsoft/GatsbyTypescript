@@ -54,7 +54,7 @@ Development server with hot-reload:
 npm start
 ```
 
-- Go to: http://localhost:8000/
+- Go to: http://localhost:8001/
 
 # Develop
 
